@@ -35,18 +35,46 @@ export default function Header() {
         <div className="flex justify-between items-center">
           {/* Clean Logo */}
           <div
-            className="flex items-center gap-3 cursor-pointer transition-transform duration-300 hover:scale-105"
+            className="flex items-center gap-1 cursor-pointer transition-transform duration-300 hover:scale-105"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
             {/* Logo with clean shadow */}
-            <div className="relative">
-              <div className="w-12 h-12 bg-[#6BCB77] rounded-[24px] border-[2px] border-[#22223B] flex items-center justify-center text-2xl shadow-[3px_3px_0px_0px_#22223B] hover:shadow-[4px_4px_0px_0px_#22223B] transition-all duration-300">
-                🟩
+            <div className="relative flex items-center gap-2">
+              {/* Logo Image */}
+              <div className="relative">
+                <img
+                  src="/logo.png"
+                  alt="Oryon Logo"
+                  className="w-14 h-14 object-contain drop-shadow-[0_4px_10px_rgba(0,0,0,.8)] transition-transform duration-300 hover:scale-105"
+                />
+              </div>
+
+              {/* Logo Text - Enhanced Cartoon Style */}
+              <div className="relative">
+                <span 
+                  className="text-3xl font-black text-[#22223B] font-['Fredoka_One'] relative z-10 transform hover:scale-105 transition-all duration-300"
+                  style={{
+                    textShadow: `
+                      -2px -2px 0 #FFD93D,
+                      2px -2px 0 #FFD93D,
+                      -2px 2px 0 #FFD93D,
+                      2px 2px 0 #FFD93D,
+                      0px 0px 0 #FFD93D,
+                      -1px -1px 0 #FFD93D,
+                      1px -1px 0 #FFD93D,
+                      -1px 1px 0 #FFD93D,
+                      1px 1px 0 #FFD93D,
+                      4px 4px 0px #22223B
+                    `
+                  }}
+                >
+                  ORYON
+                </span>
+                {/* Decorative elements */}
+                <div className="absolute -top-1 -right-2 w-3 h-3 bg-[#FF6B6B] border-[1px] border-[#22223B] rounded-full animate-pulse"></div>
+                <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-[#6BCB77] border-[1px] border-[#22223B] animate-bounce"></div>
               </div>
             </div>
-            <span className="text-3xl font-black text-[#22223B] font-['Fredoka_One'] transform hover:scale-105 transition-all duration-300">
-              ORYON
-            </span>
           </div>
 
           {/* Clean Navigation */}

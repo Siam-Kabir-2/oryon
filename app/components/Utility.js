@@ -31,19 +31,8 @@ export default function Utility() {
   return (
     <section
       id="utility"
-      className="py-24 bg-[#F8F9FA] relative overflow-hidden border-t-[2px] border-[#22223B]"
+      className="py-24 px-6 bg-[#F8F9FA] relative overflow-hidden border-t-[2px] border-[#22223B]"
     >
-      {/* Comic Background Elements */}
-      <div className="absolute top-20 left-16 w-32 h-20 bg-[#6BCB77] transform rotate-12 border-[2px] border-[#22223B] rounded-[24px] animate-pulse shadow-lg"></div>
-      <div className="absolute top-40 right-20 w-24 h-24 bg-[#FFD93D] rounded-full border-[2px] border-[#22223B] animate-bounce shadow-lg"></div>
-      <div className="absolute bottom-32 left-1/4 w-20 h-28 bg-[#FF6B6B] border-[2px] border-[#22223B] rounded-[24px] transform -rotate-12 shadow-lg"></div>
-      <div className="absolute top-1/2 right-16 text-5xl font-black text-[#22223B]/10 transform rotate-12 font-['Fredoka_One']">
-        UTILITY!
-      </div>
-      <div className="absolute bottom-24 left-16 text-4xl font-black text-[#22223B]/10 transform -rotate-12 font-['Fredoka_One']">
-        POWER!
-      </div>
-
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Comic Section Header */}
         <div className="text-center mb-16">
@@ -59,8 +48,8 @@ export default function Utility() {
           <div className="relative max-w-4xl mx-auto mt-12">
             <div className="bg-white border-[2px] border-[#22223B] rounded-[24px] p-6 shadow-[4px_4px_8px_rgba(34,34,59,0.15)] transform rotate-1">
               <p className="text-xl text-[#22223B] font-semibold leading-relaxed mb-4 font-['Nunito_Sans']">
-                🚀 Oryon is more than a token — it's the engine of a
-                decentralized IoT energy ecosystem! 💎
+              Oryon is more than a token — it's the engine of a
+                decentralized IoT energy ecosystem!
               </p>
 
               {/* Core utilities badge */}

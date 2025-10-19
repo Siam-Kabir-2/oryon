@@ -46,64 +46,56 @@ export default function Roadmap() {
     >
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
           <div className="relative inline-block">
-            <div className="relative bg-[#FF6B6B] px-8 py-4 rounded-[24px] border-[2px] border-[#22223B] shadow-[4px_4px_12px_rgba(34,34,59,0.15)]">
+            <div className="relative bg-[#FF6B6B] px-12 py-6 rounded-[24px] border-[2px] border-[#22223B] shadow-[6px_6px_0px_0px_#22223B]">
               <h2 className="text-5xl md:text-6xl font-['Fredoka_One'] text-white">
                 🚀 Roadmap
               </h2>
             </div>
           </div>
 
-          {/* Speech bubble */}
-          <div className="relative inline-block mt-4 max-w-xl mx-auto">
-            <div className="bg-white p-6 rounded-[24px] border-[2px] border-[#22223B] shadow-[4px_4px_12px_rgba(34,34,59,0.15)]">
-              <p className="text-xl md:text-2xl font-['Nunito_Sans'] text-[#22223B] font-semibold">
-                🌟 Follow our journey to a sustainable energy future! ⚡
-              </p>
-              {/* Triangle pointer */}
-              <div className="absolute -top-[10px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-b-[12px] border-b-[#22223B]" />
-              <div className="absolute -top-[8px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-b-[10px] border-b-white" />
-            </div>
-          </div>
+          <p className="text-xl md:text-2xl font-['Nunito_Sans'] text-[#22223B] font-semibold max-w-3xl mx-auto leading-relaxed mt-6">
+            🌟 Follow our journey to a sustainable energy future! ⚡
+          </p>
         </div>
 
         {/* Timeline - Desktop */}
-        <div className="hidden lg:block relative">
+        <div className="hidden lg:block relative mb-16">
           {/* Connection line */}
-          <div className="absolute top-1/2 left-0 w-full h-2 bg-[#22223B] rounded-full transform -translate-y-1/2"></div>
+          <div className="absolute top-20 left-0 w-full h-1 bg-[#22223B] rounded-full"></div>
 
-          <div className="grid grid-cols-5 gap-6 relative">
+          <div className="grid grid-cols-5 gap-6 relative h-full">
             {milestones.map((milestone, index) => (
-              <div key={index} className="flex flex-col items-center">
+              <div key={index} className="flex flex-col items-center h-full">
                 {/* Milestone Marker */}
-                <div className="relative">
+                <div className="relative mb-8 flex-shrink-0">
                   <div
-                    className={`relative w-20 h-20 ${milestone.bgColor} rounded-full flex items-center justify-center border-[2px] border-[#22223B] shadow-[4px_4px_12px_rgba(34,34,59,0.15)] hover:scale-105 transition-all duration-300`}
+                    className={`relative w-20 h-20 ${milestone.bgColor} rounded-full flex items-center justify-center border-[2px] border-[#22223B] shadow-[4px_4px_0px_0px_#22223B] hover:scale-105 hover:-translate-y-1 transition-all duration-300 z-10`}
                   >
                     <span className="text-3xl">{milestone.icon}</span>
                   </div>
                 </div>
 
                 {/* Milestone Content */}
-                <div className="relative mt-8">
-                  <div className="relative bg-white border-[2px] border-[#22223B] p-6 rounded-[24px] shadow-[4px_4px_12px_rgba(34,34,59,0.15)] max-w-xs text-center hover:-translate-y-1 transition-all duration-300">
+                <div className="relative flex-1 w-full">
+                  <div className="relative bg-white border-[2px] border-[#22223B] p-6 rounded-[24px] shadow-[4px_4px_0px_0px_#22223B] hover:shadow-[6px_6px_0px_0px_#22223B] hover:-translate-y-1 hover:-translate-x-1 transition-all duration-300 text-center h-full flex flex-col">
                     {/* Phase badge */}
-                    <div className="mb-3">
+                    <div className="mb-4 flex-shrink-0">
                       <span
-                        className={`${milestone.bgColor} text-[#22223B] px-3 py-1 rounded-full font-['Nunito_Sans'] font-bold text-xs border-[2px] border-[#22223B] uppercase tracking-wide`}
+                        className={`${milestone.bgColor} text-[#22223B] px-3 py-2 rounded-[24px] font-['Fredoka_One'] text-xs border-[2px] border-[#22223B] shadow-[2px_2px_0px_0px_#22223B] inline-block`}
                       >
                         {milestone.phase}
                       </span>
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-xl font-['Fredoka_One'] text-[#22223B] mb-3">
+                    <h3 className="text-lg font-['Fredoka_One'] text-[#22223B] mb-4 flex-shrink-0">
                       {milestone.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-[#22223B] font-['Nunito_Sans'] text-sm leading-relaxed">
+                    <p className="text-[#22223B] font-['Nunito_Sans'] text-sm leading-relaxed flex-1 flex items-center">
                       {milestone.desc}
                     </p>
                   </div>
@@ -114,35 +106,40 @@ export default function Roadmap() {
         </div>
 
         {/* Mobile Roadmap */}
-        <div className="lg:hidden space-y-6">
+        <div className="lg:hidden relative">
           {/* Vertical line */}
-          <div className="absolute left-8 top-40 bottom-20 w-1 bg-[#22223B] rounded-full"></div>
+          <div className="absolute left-8 top-0 bottom-0 w-1 bg-[#22223B] rounded-full"></div>
 
-          {milestones.map((milestone, index) => (
-            <div key={index} className="flex items-start gap-6 relative">
-              {/* Milestone Marker */}
+          <div className="space-y-6">
+            {milestones.map((milestone, index) => (
               <div
-                className={`relative w-16 h-16 ${milestone.bgColor} rounded-full flex items-center justify-center border-[2px] border-[#22223B] shadow-[4px_4px_12px_rgba(34,34,59,0.15)] flex-shrink-0`}
+                key={index}
+                className="flex items-start gap-6 relative min-h-[140px]"
               >
-                <span className="text-2xl">{milestone.icon}</span>
-              </div>
-
-              {/* Milestone Content */}
-              <div className="flex-1 bg-white p-6 rounded-[24px] border-[2px] border-[#22223B] shadow-[4px_4px_12px_rgba(34,34,59,0.15)]">
+                {/* Milestone Marker */}
                 <div
-                  className={`text-sm font-['Nunito_Sans'] font-bold ${milestone.bgColor} inline-block px-3 py-1 rounded-full border-[2px] border-[#22223B] uppercase tracking-wide mb-2`}
+                  className={`relative w-16 h-16 ${milestone.bgColor} rounded-full flex items-center justify-center border-[2px] border-[#22223B] shadow-[4px_4px_0px_0px_#22223B] flex-shrink-0 z-10`}
                 >
-                  {milestone.phase}
+                  <span className="text-2xl">{milestone.icon}</span>
                 </div>
-                <h3 className="text-xl font-['Fredoka_One'] text-[#22223B] mb-3">
-                  {milestone.title}
-                </h3>
-                <p className="text-[#22223B] font-['Nunito_Sans'] leading-relaxed">
-                  {milestone.desc}
-                </p>
+
+                {/* Milestone Content */}
+                <div className="flex-1 bg-white p-6 rounded-[24px] border-[2px] border-[#22223B] shadow-[4px_4px_0px_0px_#22223B] hover:shadow-[6px_6px_0px_0px_#22223B] hover:-translate-y-1 hover:-translate-x-1 transition-all duration-300 h-full flex flex-col">
+                  <div
+                    className={`${milestone.bgColor} text-[#22223B] inline-block px-3 py-2 rounded-[24px] border-[2px] border-[#22223B] shadow-[2px_2px_0px_0px_#22223B] font-['Fredoka_One'] text-xs mb-3 flex-shrink-0`}
+                  >
+                    {milestone.phase}
+                  </div>
+                  <h3 className="text-lg font-['Fredoka_One'] text-[#22223B] mb-3 flex-shrink-0">
+                    {milestone.title}
+                  </h3>
+                  <p className="text-[#22223B] font-['Nunito_Sans'] leading-relaxed text-sm flex-1">
+                    {milestone.desc}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

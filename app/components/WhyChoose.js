@@ -32,51 +32,82 @@ export default function WhyChoose() {
     <section className="py-16 bg-[#F8F9FA] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
           <div className="relative inline-block">
-            <div className="relative bg-[#6BCB77] px-8 py-4 rounded-[24px] border-[2px] border-[#22223B] shadow-[4px_4px_12px_rgba(34,34,59,0.15)]">
+            <div className="relative bg-gradient-to-r from-[#FF6B6B] to-[#FF4444] px-12 py-6 rounded-[24px] border-[4px] border-[#22223B] shadow-[8px_8px_0px_0px_#22223B] transform hover:scale-105 transition-all duration-300">
               <h2 className="text-5xl md:text-6xl font-['Fredoka_One'] text-white">
-                🌍 Why Choose Oryon?
+                🌍 Why Choose Oryon? 🚀
               </h2>
-            </div>
-          </div>
-
-          {/* Speech bubble */}
-          <div className="relative inline-block mt-4 max-w-xl mx-auto">
-            <div className="bg-white p-6 rounded-[24px] border-[2px] border-[#22223B] shadow-[4px_4px_12px_rgba(34,34,59,0.15)]">
-              <p className="text-xl md:text-2xl font-['Nunito_Sans'] text-[#22223B] font-semibold">
-                🚀 Leading the revolution in sustainable blockchain technology!
-                💚
-              </p>
-              {/* Triangle pointer */}
-              <div className="absolute -top-[10px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-b-[12px] border-b-[#22223B]" />
-              <div className="absolute -top-[8px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-b-[10px] border-b-white" />
             </div>
           </div>
         </div>
 
-        {/* Cards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {cards.map((card, index) => (
-            <div key={index} className="relative">
-              <div className="relative bg-white border-[2px] border-[#22223B] p-8 rounded-[24px] shadow-[4px_4px_12px_rgba(34,34,59,0.15)] text-center hover:-translate-y-1 transition-all duration-300">
-                {/* Icon */}
-                <div className="text-5xl mb-4">{card.icon}</div>
-
-                {/* Title */}
-                <h3
-                  className={`text-xl font-['Fredoka_One'] text-[#22223B] mb-4 ${card.bgColor} px-3 py-2 rounded-[24px] border-[2px] border-[#22223B]`}
-                >
-                  {card.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-[#22223B] font-['Nunito_Sans'] leading-relaxed">
-                  {card.desc}
-                </p>
-              </div>
+        {/* Pure Content Layout - NO CARDS AT ALL */}
+        <div className="text-center space-y-16">
+          {/* Features List - Enhanced Colors */}
+          <div className="max-w-4xl mx-auto space-y-12">
+            {/* Feature 1 - Enhanced Green */}
+            <div className="text-center">
+              <h3 className="text-4xl md:text-5xl font-['Fredoka_One'] bg-gradient-to-r from-[#6BCB77] to-[#4AE54A] bg-clip-text text-transparent mb-4 drop-shadow-lg">
+                🔋 GREEN BY DESIGN
+              </h3>
+              <p className="text-xl md:text-2xl font-['Nunito_Sans'] text-[#22223B] font-semibold leading-relaxed">
+                Promoting renewable energy adoption through decentralized
+                technology.
+              </p>
             </div>
-          ))}
+
+            {/* Enhanced Separator */}
+            <div className="flex justify-center items-center gap-4">
+              <div className="w-20 h-2 bg-gradient-to-r from-[#FFD93D] to-[#FFA500] rounded-full"></div>
+              <span className="text-4xl drop-shadow-lg">⚡</span>
+              <div className="w-20 h-2 bg-gradient-to-r from-[#FFA500] to-[#FFD93D] rounded-full"></div>
+            </div>
+
+            {/* Feature 2 - Enhanced Yellow */}
+            <div className="text-center">
+              <h3 className="text-4xl md:text-5xl font-['Fredoka_One'] bg-gradient-to-r from-[#FFD93D] to-[#FFA500] bg-clip-text text-transparent mb-4 drop-shadow-lg">
+                🌐 IOT INTEGRATED
+              </h3>
+              <p className="text-xl md:text-2xl font-['Nunito_Sans'] text-[#22223B] font-semibold leading-relaxed">
+                Smart device connectivity for efficient energy management.
+              </p>
+            </div>
+
+            {/* Enhanced Separator */}
+            <div className="flex justify-center items-center gap-4">
+              <div className="w-20 h-2 bg-gradient-to-r from-[#6BCB77] to-[#4AE54A] rounded-full"></div>
+              <span className="text-4xl drop-shadow-lg">🌱</span>
+              <div className="w-20 h-2 bg-gradient-to-r from-[#4AE54A] to-[#6BCB77] rounded-full"></div>
+            </div>
+
+            {/* Feature 3 - Enhanced Red */}
+            <div className="text-center">
+              <h3 className="text-4xl md:text-5xl font-['Fredoka_One'] bg-gradient-to-r from-[#FF6B6B] to-[#FF4444] bg-clip-text text-transparent mb-4 drop-shadow-lg">
+                🔒 SECURE & TRANSPARENT
+              </h3>
+              <p className="text-xl md:text-2xl font-['Nunito_Sans'] text-[#22223B] font-semibold leading-relaxed">
+                Built on blockchain for traceability and trust.
+              </p>
+            </div>
+
+            {/* Enhanced Separator */}
+            <div className="flex justify-center items-center gap-4">
+              <div className="w-20 h-2 bg-gradient-to-r from-[#FF6B6B] to-[#FF4444] rounded-full"></div>
+              <span className="text-4xl drop-shadow-lg">🛡️</span>
+              <div className="w-20 h-2 bg-gradient-to-r from-[#FF4444] to-[#FF6B6B] rounded-full"></div>
+            </div>
+
+            {/* Feature 4 - Enhanced Purple/Blue */}
+            <div className="text-center">
+              <h3 className="text-4xl md:text-5xl font-['Fredoka_One'] bg-gradient-to-r from-[#8B5CF6] to-[#6366F1] bg-clip-text text-transparent mb-4 drop-shadow-lg">
+                💰 COMMUNITY-DRIVEN
+              </h3>
+              <p className="text-xl md:text-2xl font-['Nunito_Sans'] text-[#22223B] font-semibold leading-relaxed">
+                Governance and decision-making powered by ORY holders.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
