@@ -2,16 +2,24 @@
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center pt-24 pb-16 px-6 relative overflow-hidden" style={{backgroundImage: 'url(/hero.svg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
+    <section
+      className="min-h-screen flex items-center pt-24 pb-16 px-6 relative overflow-hidden"
+      style={{
+        backgroundImage: "url(/hero.svg)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       {/* Comic book style background elements */}
       {/* <div className="absolute inset-0 pointer-events-none"> */}
-        {/* Large comic burst shapes */}
-        {/* <div className="absolute top-10 left-10 w-32 h-32 bg-yellow-300 rounded-full border-4 border-black opacity-20 animate-pulse"></div>
+      {/* Large comic burst shapes */}
+      {/* <div className="absolute top-10 left-10 w-32 h-32 bg-yellow-300 rounded-full border-4 border-black opacity-20 animate-pulse"></div>
         <div className="absolute top-1/3 right-20 w-24 h-24 bg-pink-300 transform rotate-45 border-4 border-black opacity-20 animate-bounce"></div>
         <div className="absolute bottom-20 left-1/4 w-20 h-20 bg-purple-300 clip-path-star border-4 border-black opacity-20"></div> */}
 
-        {/* Comic book dots pattern */}
-        {/* <div
+      {/* Comic book dots pattern */}
+      {/* <div
           className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-transparent via-black/5 to-transparent"
           style={{
             backgroundImage:
