@@ -39,20 +39,20 @@ export default function Header() {
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
             {/* Logo with clean shadow */}
-            <div className="relative flex items-center gap-2">
+            <div className="relative flex items-center gap-1 sm:gap-2">
               {/* Logo Image */}
               <div className="relative">
                 <img
                   src="/logo.png"
                   alt="Oryon Logo"
-                  className="w-14 h-14 object-contain drop-shadow-[0_4px_10px_rgba(0,0,0,.8)] transition-transform duration-300 hover:scale-105"
+                  className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 object-contain drop-shadow-[0_4px_10px_rgba(0,0,0,.8)] transition-transform duration-300 hover:scale-105"
                 />
               </div>
 
               {/* Logo Text - Enhanced Cartoon Style */}
               <div className="relative">
                 <span
-                  className="text-3xl font-black text-[#22223B] font-['Fredoka_One'] relative z-10 transform hover:scale-105 transition-all duration-300"
+                  className="text-xl sm:text-2xl lg:text-3xl font-black text-[#22223B] font-['Fredoka_One'] relative z-10 transform hover:scale-105 transition-all duration-300"
                   style={{
                     textShadow: `
                       -2px -2px 0 #FFD93D,
@@ -71,8 +71,8 @@ export default function Header() {
                   ORYON
                 </span>
                 {/* Decorative elements */}
-                <div className="absolute -top-1 -right-2 w-3 h-3 bg-[#FF6B6B] border-[1px] border-[#22223B] rounded-full animate-pulse"></div>
-                <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-[#6BCB77] border-[1px] border-[#22223B] animate-bounce"></div>
+                <div className="absolute -top-1 -right-1 sm:-right-2 w-2 h-2 sm:w-3 sm:h-3 bg-[#FF6B6B] border-[1px] border-[#22223B] rounded-full animate-pulse"></div>
+                <div className="absolute -bottom-1 -left-1 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#6BCB77] border-[1px] border-[#22223B] animate-bounce"></div>
               </div>
             </div>
           </div>

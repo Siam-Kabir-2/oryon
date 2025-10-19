@@ -123,37 +123,37 @@ export default function Tokenomics() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Header with Integrated Total Supply */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 lg:mb-16">
           <div className="relative inline-block">
             {/* Title background */}
-            <div className="absolute inset-0 bg-[#FF6B6B] transform -rotate-3 rounded-[32px] border-[4px] border-[#22223B] shadow-[8px_8px_0px_0px_#22223B]"></div>
-            <div className="relative px-12 py-8 transform rotate-3">
-              <h2 className="text-4xl lg:text-6xl font-['Fredoka_One'] text-[#22223B] mb-4">
+            <div className="absolute inset-0 bg-[#FF6B6B] transform -rotate-3 rounded-[24px] lg:rounded-[32px] border-[4px] border-[#22223B] shadow-[8px_8px_0px_0px_#22223B]"></div>
+            <div className="relative px-6 sm:px-8 lg:px-12 py-4 sm:py-6 lg:py-8 transform rotate-3">
+              <h2 className="text-2xl sm:text-3xl lg:text-6xl font-['Fredoka_One'] text-[#22223B] mb-3 lg:mb-4">
                 💰 TOKENOMICS! 💰
               </h2>
-              <div className="flex items-center justify-center gap-4 bg-[#FFD93D] rounded-[24px] border-[3px] border-[#22223B] p-4 shadow-[4px_4px_0px_0px_#22223B]">
-                <span className="text-3xl">🪙</span>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 bg-[#FFD93D] rounded-[20px] lg:rounded-[24px] border-[3px] border-[#22223B] p-3 lg:p-4 shadow-[4px_4px_0px_0px_#22223B]">
+                <span className="text-2xl lg:text-3xl">🪙</span>
                 <div className="text-center">
-                  <div className="font-['Fredoka_One'] text-[#22223B] text-xl">
+                  <div className="font-['Fredoka_One'] text-[#22223B] text-sm sm:text-base lg:text-xl">
                     TOTAL SUPPLY
                   </div>
-                  <div className="font-['Fredoka_One'] text-[#FF6B6B] text-2xl">
+                  <div className="font-['Fredoka_One'] text-[#FF6B6B] text-lg sm:text-xl lg:text-2xl">
                     100,000,000 ORY
                   </div>
-                  <div className="font-['Nunito_Sans'] text-[#22223B] text-sm font-semibold">
+                  <div className="font-['Nunito_Sans'] text-[#22223B] text-xs lg:text-sm font-semibold">
                     BEP-20 Token
                   </div>
                 </div>
-                <span className="text-3xl">⚡</span>
+                <span className="text-2xl lg:text-3xl">⚡</span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Token Distribution - Clean Pie Chart */}
-        <div className="mb-16 relative">
+        <div className="mb-8 lg:mb-16 relative">
           <div
-            className="bg-gradient-to-br from-[#F8F9FA] to-[#E9ECEF] border-[4px] border-[#22223B] rounded-[32px] p-8 shadow-[6px_6px_0px_0px_#22223B] relative"
+            className="bg-gradient-to-br from-[#F8F9FA] to-[#E9ECEF] border-[4px] border-[#22223B] rounded-[24px] lg:rounded-[32px] p-4 sm:p-6 lg:p-8 shadow-[6px_6px_0px_0px_#22223B] relative"
             style={{
               backgroundImage: "url(/distribution.svg)",
               backgroundSize: "cover",
@@ -161,8 +161,8 @@ export default function Tokenomics() {
               backgroundRepeat: "no-repeat",
             }}
           >
-            <div className="text-center mb-8">
-              <h3 className="text-3xl font-['Fredoka_One'] text-[#22223B] bg-[#FFD93D] px-8 py-4 rounded-[32px] border-[3px] border-[#22223B] shadow-[4px_4px_0px_0px_#22223B] inline-block">
+            <div className="text-center mb-6 lg:mb-8">
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-['Fredoka_One'] text-[#22223B] bg-[#FFD93D] px-4 sm:px-6 lg:px-8 py-3 lg:py-4 rounded-[24px] lg:rounded-[32px] border-[3px] border-[#22223B] shadow-[4px_4px_0px_0px_#22223B] inline-block">
                 📊 TOKEN DISTRIBUTION 📊
               </h3>
             </div>
@@ -176,7 +176,29 @@ export default function Tokenomics() {
                   setHoveredSegment(null);
                 }}
               >
-                <svg width="400" height="400" className="transform -rotate-90">
+                <svg
+                  width="300"
+                  height="300"
+                  className="sm:w-[350px] sm:h-[350px] lg:w-[400px] lg:h-[400px] transform -rotate-90"
+                >
+                  <circle
+                    cx="150"
+                    cy="150"
+                    r="105"
+                    fill="none"
+                    stroke="#E9ECEF"
+                    strokeWidth="45"
+                    className="drop-shadow-md sm:hidden"
+                  />
+                  <circle
+                    cx="175"
+                    cy="175"
+                    r="122.5"
+                    fill="none"
+                    stroke="#E9ECEF"
+                    strokeWidth="52.5"
+                    className="drop-shadow-md hidden sm:block lg:hidden"
+                  />
                   <circle
                     cx="200"
                     cy="200"
@@ -184,12 +206,16 @@ export default function Tokenomics() {
                     fill="none"
                     stroke="#E9ECEF"
                     strokeWidth="60"
-                    className="drop-shadow-md"
+                    className="drop-shadow-md hidden lg:block"
                   />
 
                   {distributions.map((item, index) => {
-                    const circumference = 2 * Math.PI * 140;
+                    const circumference = 2 * Math.PI * 105; // Mobile
+                    const circumferenceSm = 2 * Math.PI * 122.5; // Tablet
+                    const circumferenceLg = 2 * Math.PI * 140; // Desktop
                     const percentage = parseInt(item.percentage);
+
+                    // Mobile calculations
                     const strokeDasharray = `${
                       (percentage / 100) * circumference
                     } ${circumference}`;
@@ -198,52 +224,151 @@ export default function Tokenomics() {
                       circumference
                     );
 
+                    // Tablet calculations
+                    const strokeDasharraySm = `${
+                      (percentage / 100) * circumferenceSm
+                    } ${circumferenceSm}`;
+                    const strokeDashoffsetSm = -(
+                      (item.offset / 100) *
+                      circumferenceSm
+                    );
+
+                    // Desktop calculations
+                    const strokeDasharrayLg = `${
+                      (percentage / 100) * circumferenceLg
+                    } ${circumferenceLg}`;
+                    const strokeDashoffsetLg = -(
+                      (item.offset / 100) *
+                      circumferenceLg
+                    );
+
                     return (
-                      <circle
-                        key={index}
-                        cx="200"
-                        cy="200"
-                        r="140"
-                        fill="none"
-                        stroke={item.strokeColor}
-                        strokeWidth="60"
-                        strokeDasharray={strokeDasharray}
-                        strokeDashoffset={strokeDashoffset}
-                        className={`transition-all duration-500 cursor-pointer ${
-                          hoveredSegment === index || selectedSegment === index
-                            ? "opacity-100 drop-shadow-lg"
-                            : "opacity-90"
-                        }`}
-                        onMouseEnter={() => setHoveredSegment(index)}
-                        onMouseLeave={() => setHoveredSegment(null)}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setSelectedSegment(
-                            selectedSegment === index ? null : index
-                          );
-                        }}
-                        style={{
-                          filter:
+                      <g key={index}>
+                        {/* Mobile circle */}
+                        <circle
+                          cx="150"
+                          cy="150"
+                          r="105"
+                          fill="none"
+                          stroke={item.strokeColor}
+                          strokeWidth="45"
+                          strokeDasharray={strokeDasharray}
+                          strokeDashoffset={strokeDashoffset}
+                          className={`transition-all duration-500 cursor-pointer sm:hidden ${
                             hoveredSegment === index ||
                             selectedSegment === index
-                              ? "brightness(1.2) saturate(1.2)"
-                              : "brightness(1)",
-                          strokeWidth:
+                              ? "opacity-100 drop-shadow-lg"
+                              : "opacity-90"
+                          }`}
+                          onMouseEnter={() => setHoveredSegment(index)}
+                          onMouseLeave={() => setHoveredSegment(null)}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setSelectedSegment(
+                              selectedSegment === index ? null : index
+                            );
+                          }}
+                          style={{
+                            filter:
+                              hoveredSegment === index ||
+                              selectedSegment === index
+                                ? "brightness(1.2) saturate(1.2)"
+                                : "brightness(1)",
+                            strokeWidth:
+                              hoveredSegment === index ||
+                              selectedSegment === index
+                                ? "52"
+                                : "45",
+                          }}
+                        />
+
+                        {/* Tablet circle */}
+                        <circle
+                          cx="175"
+                          cy="175"
+                          r="122.5"
+                          fill="none"
+                          stroke={item.strokeColor}
+                          strokeWidth="52.5"
+                          strokeDasharray={strokeDasharraySm}
+                          strokeDashoffset={strokeDashoffsetSm}
+                          className={`transition-all duration-500 cursor-pointer hidden sm:block lg:hidden ${
                             hoveredSegment === index ||
                             selectedSegment === index
-                              ? "70"
-                              : "60",
-                        }}
-                      />
+                              ? "opacity-100 drop-shadow-lg"
+                              : "opacity-90"
+                          }`}
+                          onMouseEnter={() => setHoveredSegment(index)}
+                          onMouseLeave={() => setHoveredSegment(null)}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setSelectedSegment(
+                              selectedSegment === index ? null : index
+                            );
+                          }}
+                          style={{
+                            filter:
+                              hoveredSegment === index ||
+                              selectedSegment === index
+                                ? "brightness(1.2) saturate(1.2)"
+                                : "brightness(1)",
+                            strokeWidth:
+                              hoveredSegment === index ||
+                              selectedSegment === index
+                                ? "61"
+                                : "52.5",
+                          }}
+                        />
+
+                        {/* Desktop circle */}
+                        <circle
+                          cx="200"
+                          cy="200"
+                          r="140"
+                          fill="none"
+                          stroke={item.strokeColor}
+                          strokeWidth="60"
+                          strokeDasharray={strokeDasharrayLg}
+                          strokeDashoffset={strokeDashoffsetLg}
+                          className={`transition-all duration-500 cursor-pointer hidden lg:block ${
+                            hoveredSegment === index ||
+                            selectedSegment === index
+                              ? "opacity-100 drop-shadow-lg"
+                              : "opacity-90"
+                          }`}
+                          onMouseEnter={() => setHoveredSegment(index)}
+                          onMouseLeave={() => setHoveredSegment(null)}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setSelectedSegment(
+                              selectedSegment === index ? null : index
+                            );
+                          }}
+                          style={{
+                            filter:
+                              hoveredSegment === index ||
+                              selectedSegment === index
+                                ? "brightness(1.2) saturate(1.2)"
+                                : "brightness(1)",
+                            strokeWidth:
+                              hoveredSegment === index ||
+                              selectedSegment === index
+                                ? "70"
+                                : "60",
+                          }}
+                        />
+                      </g>
                     );
                   })}
                 </svg>
 
                 {/* Center Info */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <div className="text-center bg-white border-[3px] border-[#22223B] rounded-full p-6 shadow-[6px_6px_0px_0px_#22223B]">
-                    <div className="text-4xl mb-2">🪙</div>
-                    <div className="font-['Fredoka_One'] text-[#22223B] text-lg">
+                  <div className="text-center bg-white border-[3px] border-[#22223B] rounded-full p-3 sm:p-4 lg:p-6 shadow-[4px_4px_0px_0px_#22223B] lg:shadow-[6px_6px_0px_0px_#22223B]">
+                    <div className="text-2xl sm:text-3xl lg:text-4xl mb-1 lg:mb-2">
+                      🪙
+                    </div>
+                    <div className="font-['Fredoka_One'] text-[#22223B] text-sm sm:text-base lg:text-lg">
                       100M ORY
                     </div>
                   </div>
@@ -260,43 +385,137 @@ export default function Tokenomics() {
                       2 *
                       Math.PI -
                     Math.PI / 2;
-                  const labelRadius = 180;
-                  const x = 200 + Math.cos(angle) * labelRadius;
-                  const y = 200 + Math.sin(angle) * labelRadius;
+
+                  // Responsive label positioning
+                  const labelRadiusMobile = 135;
+                  const labelRadiusTablet = 157.5;
+                  const labelRadiusDesktop = 180;
+
+                  // Mobile positions
+                  const xMobile = 150 + Math.cos(angle) * labelRadiusMobile;
+                  const yMobile = 150 + Math.sin(angle) * labelRadiusMobile;
+
+                  // Tablet positions
+                  const xTablet = 175 + Math.cos(angle) * labelRadiusTablet;
+                  const yTablet = 175 + Math.sin(angle) * labelRadiusTablet;
+
+                  // Desktop positions
+                  const xDesktop = 200 + Math.cos(angle) * labelRadiusDesktop;
+                  const yDesktop = 200 + Math.sin(angle) * labelRadiusDesktop;
 
                   return (
-                    <div
-                      key={`label-${index}`}
-                      className={`absolute transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 cursor-pointer ${
-                        hoveredSegment === index || selectedSegment === index
-                          ? "scale-110 z-20"
-                          : "z-10"
-                      }`}
-                      style={{
-                        left: `${x}px`,
-                        top: `${y}px`,
-                      }}
-                      onMouseEnter={() => setHoveredSegment(index)}
-                      onMouseLeave={() => setHoveredSegment(null)}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setSelectedSegment(
-                          selectedSegment === index ? null : index
-                        );
-                      }}
-                    >
+                    <div key={`label-container-${index}`}>
+                      {/* Mobile label */}
                       <div
-                        className={`${
-                          item.bgColor
-                        } border-[3px] border-[#22223B] rounded-full w-16 h-16 flex flex-col items-center justify-center shadow-[4px_4px_0px_0px_#22223B] ${
+                        key={`label-mobile-${index}`}
+                        className={`absolute transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 cursor-pointer sm:hidden ${
                           hoveredSegment === index || selectedSegment === index
-                            ? "shadow-[6px_6px_0px_0px_#22223B]"
-                            : ""
+                            ? "scale-110 z-20"
+                            : "z-10"
                         }`}
+                        style={{
+                          left: `${xMobile}px`,
+                          top: `${yMobile}px`,
+                        }}
+                        onMouseEnter={() => setHoveredSegment(index)}
+                        onMouseLeave={() => setHoveredSegment(null)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedSegment(
+                            selectedSegment === index ? null : index
+                          );
+                        }}
                       >
-                        <div className="text-lg">{item.icon}</div>
-                        <div className="font-['Fredoka_One'] text-[#22223B] text-xs">
-                          {item.percentage}
+                        <div
+                          className={`${
+                            item.bgColor
+                          } border-[2px] border-[#22223B] rounded-full w-12 h-12 flex flex-col items-center justify-center shadow-[3px_3px_0px_0px_#22223B] ${
+                            hoveredSegment === index ||
+                            selectedSegment === index
+                              ? "shadow-[4px_4px_0px_0px_#22223B]"
+                              : ""
+                          }`}
+                        >
+                          <div className="text-sm">{item.icon}</div>
+                          <div className="font-['Fredoka_One'] text-[#22223B] text-[10px]">
+                            {item.percentage}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Tablet label */}
+                      <div
+                        key={`label-tablet-${index}`}
+                        className={`absolute transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 cursor-pointer hidden sm:block lg:hidden ${
+                          hoveredSegment === index || selectedSegment === index
+                            ? "scale-110 z-20"
+                            : "z-10"
+                        }`}
+                        style={{
+                          left: `${xTablet}px`,
+                          top: `${yTablet}px`,
+                        }}
+                        onMouseEnter={() => setHoveredSegment(index)}
+                        onMouseLeave={() => setHoveredSegment(null)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedSegment(
+                            selectedSegment === index ? null : index
+                          );
+                        }}
+                      >
+                        <div
+                          className={`${
+                            item.bgColor
+                          } border-[3px] border-[#22223B] rounded-full w-14 h-14 flex flex-col items-center justify-center shadow-[4px_4px_0px_0px_#22223B] ${
+                            hoveredSegment === index ||
+                            selectedSegment === index
+                              ? "shadow-[5px_5px_0px_0px_#22223B]"
+                              : ""
+                          }`}
+                        >
+                          <div className="text-base">{item.icon}</div>
+                          <div className="font-['Fredoka_One'] text-[#22223B] text-[11px]">
+                            {item.percentage}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Desktop label */}
+                      <div
+                        key={`label-desktop-${index}`}
+                        className={`absolute transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 cursor-pointer hidden lg:block ${
+                          hoveredSegment === index || selectedSegment === index
+                            ? "scale-110 z-20"
+                            : "z-10"
+                        }`}
+                        style={{
+                          left: `${xDesktop}px`,
+                          top: `${yDesktop}px`,
+                        }}
+                        onMouseEnter={() => setHoveredSegment(index)}
+                        onMouseLeave={() => setHoveredSegment(null)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedSegment(
+                            selectedSegment === index ? null : index
+                          );
+                        }}
+                      >
+                        <div
+                          className={`${
+                            item.bgColor
+                          } border-[3px] border-[#22223B] rounded-full w-16 h-16 flex flex-col items-center justify-center shadow-[4px_4px_0px_0px_#22223B] ${
+                            hoveredSegment === index ||
+                            selectedSegment === index
+                              ? "shadow-[6px_6px_0px_0px_#22223B]"
+                              : ""
+                          }`}
+                        >
+                          <div className="text-lg">{item.icon}</div>
+                          <div className="font-['Fredoka_One'] text-[#22223B] text-xs">
+                            {item.percentage}
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -306,7 +525,7 @@ export default function Tokenomics() {
             </div>
 
             {/* Instruction Text */}
-            <p className="text-center mt-6 font-['Nunito_Sans'] text-[#22223B] text-sm font-semibold">
+            <p className="text-center mt-4 lg:mt-6 font-['Nunito_Sans'] text-[#22223B] text-xs sm:text-sm font-semibold">
               💡 Click any segment for detailed tokenomics information
             </p>
           </div>
@@ -417,39 +636,43 @@ export default function Tokenomics() {
 
         {/* Contract Information - Integrated Banner */}
         <div className="relative">
-          <div className="bg-gradient-to-r from-[#6BCB77] via-[#FFD93D] to-[#FF6B6B] border-[4px] border-[#22223B] rounded-[32px] p-8 shadow-[6px_6px_0px_0px_#22223B]">
-            <div className="text-center mb-6">
-              <h3 className="text-2xl md:text-3xl font-['Fredoka_One'] text-[#22223B] bg-white px-6 py-3 rounded-[24px] border-[3px] border-[#22223B] shadow-[4px_4px_0px_0px_#22223B] inline-block">
+          <div className="bg-gradient-to-r from-[#6BCB77] via-[#FFD93D] to-[#FF6B6B] border-[4px] border-[#22223B] rounded-[24px] lg:rounded-[32px] p-4 sm:p-6 lg:p-8 shadow-[6px_6px_0px_0px_#22223B]">
+            <div className="text-center mb-4 lg:mb-6">
+              <h3 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-['Fredoka_One'] text-[#22223B] bg-white px-4 sm:px-6 py-2 lg:py-3 rounded-[20px] lg:rounded-[24px] border-[3px] border-[#22223B] shadow-[4px_4px_0px_0px_#22223B] inline-block">
                 📋 CONTRACT DETAILS 📋
               </h3>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid sm:grid-cols-2 gap-4 lg:gap-6">
               {/* Network Info */}
-              <div className="bg-white p-6 rounded-[24px] border-[3px] border-[#22223B] shadow-[4px_4px_0px_0px_#22223B] text-center">
-                <div className="text-4xl mb-3">🌐</div>
-                <h4 className="font-['Fredoka_One'] text-[#22223B] text-lg mb-2">
+              <div className="bg-white p-4 lg:p-6 rounded-[20px] lg:rounded-[24px] border-[3px] border-[#22223B] shadow-[4px_4px_0px_0px_#22223B] text-center">
+                <div className="text-2xl sm:text-3xl lg:text-4xl mb-2 lg:mb-3">
+                  🌐
+                </div>
+                <h4 className="font-['Fredoka_One'] text-[#22223B] text-base lg:text-lg mb-1 lg:mb-2">
                   NETWORK
                 </h4>
-                <p className="font-['Nunito_Sans'] text-[#22223B] font-bold">
+                <p className="font-['Nunito_Sans'] text-[#22223B] font-bold text-sm lg:text-base">
                   Binance Smart Chain (BSC)
                 </p>
               </div>
 
               {/* Contract Address */}
-              <div className="bg-white p-6 rounded-[24px] border-[3px] border-[#22223B] shadow-[4px_4px_0px_0px_#22223B] text-center">
-                <div className="text-4xl mb-3">📝</div>
-                <h4 className="font-['Fredoka_One'] text-[#22223B] text-lg mb-3">
+              <div className="bg-white p-4 lg:p-6 rounded-[20px] lg:rounded-[24px] border-[3px] border-[#22223B] shadow-[4px_4px_0px_0px_#22223B] text-center">
+                <div className="text-2xl sm:text-3xl lg:text-4xl mb-2 lg:mb-3">
+                  📝
+                </div>
+                <h4 className="font-['Fredoka_One'] text-[#22223B] text-base lg:text-lg mb-2 lg:mb-3">
                   TEST CONTRACT
                 </h4>
-                <div className="bg-[#F8F9FA] p-3 rounded-[16px] border-[2px] border-[#22223B] mb-3">
-                  <code className="font-mono text-xs text-[#22223B] font-semibold break-all">
+                <div className="bg-[#F8F9FA] p-2 lg:p-3 rounded-[12px] lg:rounded-[16px] border-[2px] border-[#22223B] mb-2 lg:mb-3">
+                  <code className="font-mono text-[10px] sm:text-xs text-[#22223B] font-semibold break-all">
                     0xB846d28185F1D36D9aAB4f1E33BC0FD060bc1Daf
                   </code>
                 </div>
                 <button
                   onClick={copyContract}
-                  className={`px-4 py-2 rounded-[16px] border-[2px] border-[#22223B] hover:scale-105 transition-all duration-200 shadow-[2px_2px_0px_0px_#22223B] font-['Fredoka_One'] text-sm ${
+                  className={`px-3 lg:px-4 py-2 rounded-[12px] lg:rounded-[16px] border-[2px] border-[#22223B] hover:scale-105 transition-all duration-200 shadow-[2px_2px_0px_0px_#22223B] font-['Fredoka_One'] text-xs lg:text-sm ${
                     isCopied
                       ? "bg-[#6BCB77] text-white"
                       : "bg-[#FF6B6B] text-white"
