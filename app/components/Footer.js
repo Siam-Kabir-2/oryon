@@ -6,12 +6,12 @@ export default function Footer() {
 
   const openModal = (modalType) => {
     setActiveModal(modalType);
-    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    document.body.style.overflow = "hidden"; // Prevent background scrolling
   };
 
   const closeModal = () => {
     setActiveModal(null);
-    document.body.style.overflow = 'unset'; // Re-enable scrolling
+    document.body.style.overflow = "unset"; // Re-enable scrolling
   };
 
   // Modal content data
@@ -39,7 +39,7 @@ export default function Footer() {
         <p>• You can request data deletion at any time</p>
         <p>• You control your wallet and private keys</p>
         <p>• Unsubscribe from communications anytime</p>
-      `
+      `,
     },
     terms: {
       title: "📜 Terms of Service",
@@ -64,7 +64,7 @@ export default function Footer() {
         <p>• Services provided "as is" without warranties</p>
         <p>• We may modify or discontinue services</p>
         <p>• No liability for service interruptions</p>
-      `
+      `,
     },
     disclaimer: {
       title: "⚠️ Disclaimer",
@@ -90,8 +90,8 @@ export default function Footer() {
         <p>• No guarantee of token performance or returns</p>
         <p>• Technology risks and smart contract risks exist</p>
         <p>• Past performance does not predict future results</p>
-      `
-    }
+      `,
+    },
   };
   return (
     <footer className="bg-[#22223B] text-white py-8 relative overflow-hidden">
@@ -180,19 +180,19 @@ export default function Footer() {
 
               <div className="flex gap-2 flex-wrap justify-center">
                 <button
-                  onClick={() => openModal('privacy')}
+                  onClick={() => openModal("privacy")}
                   className="bg-[#FF6B6B] border-[2px] border-[#22223B] rounded-[24px] px-3 py-2 text-white font-['Fredoka_One'] text-xs hover:scale-105 hover:shadow-[2px_2px_0px_0px_#22223B] transition-all duration-300 cursor-pointer"
                 >
                   Privacy Policy
                 </button>
                 <button
-                  onClick={() => openModal('terms')}
+                  onClick={() => openModal("terms")}
                   className="bg-[#6BCB77] border-[2px] border-[#22223B] rounded-[24px] px-3 py-2 text-white font-['Fredoka_One'] text-xs hover:scale-105 hover:shadow-[2px_2px_0px_0px_#22223B] transition-all duration-300 cursor-pointer"
                 >
                   Terms
                 </button>
                 <button
-                  onClick={() => openModal('disclaimer')}
+                  onClick={() => openModal("disclaimer")}
                   className="bg-[#FFD93D] border-[2px] border-[#22223B] rounded-[24px] px-3 py-2 text-[#22223B] font-['Fredoka_One'] text-xs hover:scale-105 hover:shadow-[2px_2px_0px_0px_#22223B] transition-all duration-300 cursor-pointer"
                 >
                   Disclaimer
@@ -207,15 +207,19 @@ export default function Footer() {
       {activeModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           {/* Backdrop */}
-          <div 
+          <div
             className="absolute inset-0 bg-black/50 backdrop-blur-sm"
             onClick={closeModal}
           ></div>
-          
+
           {/* Modal Content */}
           <div className="relative bg-white border-[4px] border-[#22223B] rounded-[24px] shadow-[8px_8px_0px_0px_#22223B] max-w-2xl w-full max-h-[80vh] overflow-hidden">
             {/* Modal Header */}
-            <div className={`${modalContent[activeModal].color} ${modalContent[activeModal].textColor || 'text-white'} p-6 border-b-[3px] border-[#22223B]`}>
+            <div
+              className={`${modalContent[activeModal].color} ${
+                modalContent[activeModal].textColor || "text-white"
+              } p-6 border-b-[3px] border-[#22223B]`}
+            >
               <div className="flex justify-between items-center">
                 <h2 className="text-2xl font-['Fredoka_One']">
                   {modalContent[activeModal].title}
@@ -228,25 +232,33 @@ export default function Footer() {
                 </button>
               </div>
             </div>
-            
+
             {/* Modal Body */}
             <div className="p-6 overflow-y-auto max-h-[60vh]">
-              <div 
+              <div
                 className="text-[#22223B] font-['Nunito_Sans'] space-y-4"
                 dangerouslySetInnerHTML={{
                   __html: modalContent[activeModal].content
-                    .split('\n')
-                    .map(line => {
+                    .split("\n")
+                    .map((line) => {
                       const trimmed = line.trim();
-                      if (trimmed.startsWith('<h3>')) return `<h3 class="text-lg font-['Fredoka_One'] text-[#22223B] mb-2 mt-4 first:mt-0">${trimmed.slice(4, -5)}</h3>`;
-                      if (trimmed.startsWith('<p>')) return `<p class="text-sm leading-relaxed mb-1">${trimmed.slice(3, -4)}</p>`;
+                      if (trimmed.startsWith("<h3>"))
+                        return `<h3 class="text-lg font-['Fredoka_One'] text-[#22223B] mb-2 mt-4 first:mt-0">${trimmed.slice(
+                          4,
+                          -5
+                        )}</h3>`;
+                      if (trimmed.startsWith("<p>"))
+                        return `<p class="text-sm leading-relaxed mb-1">${trimmed.slice(
+                          3,
+                          -4
+                        )}</p>`;
                       return trimmed;
                     })
-                    .join('')
+                    .join(""),
                 }}
               />
             </div>
-            
+
             {/* Modal Footer */}
             <div className="p-6 border-t-[3px] border-[#22223B] bg-[#F8F9FA]">
               <div className="flex justify-center gap-4">

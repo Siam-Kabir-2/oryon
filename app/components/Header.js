@@ -51,7 +51,7 @@ export default function Header() {
 
               {/* Logo Text - Enhanced Cartoon Style */}
               <div className="relative">
-                <span 
+                <span
                   className="text-3xl font-black text-[#22223B] font-['Fredoka_One'] relative z-10 transform hover:scale-105 transition-all duration-300"
                   style={{
                     textShadow: `
@@ -65,7 +65,7 @@ export default function Header() {
                       -1px 1px 0 #FFD93D,
                       1px 1px 0 #FFD93D,
                       4px 4px 0px #22223B
-                    `
+                    `,
                   }}
                 >
                   ORYON

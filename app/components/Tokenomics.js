@@ -63,41 +63,40 @@ export default function Tokenomics() {
 
   const copyContract = async () => {
     const address = "0xB846d28185F1D36D9aAB4f1E33BC0FD060bc1Daf";
-    
+
     try {
       // Check if clipboard API is available
       if (!navigator.clipboard) {
         // Fallback for older browsers
-        const textArea = document.createElement('textarea');
+        const textArea = document.createElement("textarea");
         textArea.value = address;
-        textArea.style.position = 'fixed';
-        textArea.style.left = '-999999px';
-        textArea.style.top = '-999999px';
+        textArea.style.position = "fixed";
+        textArea.style.left = "-999999px";
+        textArea.style.top = "-999999px";
         document.body.appendChild(textArea);
         textArea.focus();
         textArea.select();
-        document.execCommand('copy');
+        document.execCommand("copy");
         document.body.removeChild(textArea);
       } else {
         // Modern clipboard API
         await navigator.clipboard.writeText(address);
       }
-      
+
       // Update button state to show "COPIED"
       setIsCopied(true);
-      
+
       // Console log for testing
-      console.log('✅ Copy Success - Contract Address:', address);
-      
+      console.log("✅ Copy Success - Contract Address:", address);
+
       // Reset button after 2 seconds
       setTimeout(() => {
         setIsCopied(false);
       }, 2000);
-      
     } catch (error) {
       // Error handling
-      console.error('❌ Copy failed:', error);
-      
+      console.error("❌ Copy failed:", error);
+
       // Show error state briefly
       setIsCopied(true);
       setTimeout(() => {
@@ -153,7 +152,7 @@ export default function Tokenomics() {
 
         {/* Token Distribution - Clean Pie Chart */}
         <div className="mb-16 relative">
-          <div 
+          <div
             className="bg-gradient-to-br from-[#F8F9FA] to-[#E9ECEF] border-[4px] border-[#22223B] rounded-[32px] p-8 shadow-[6px_6px_0px_0px_#22223B] relative"
             style={{
               backgroundImage: "url(/distribution.svg)",
@@ -451,16 +450,15 @@ export default function Tokenomics() {
                 <button
                   onClick={copyContract}
                   className={`px-4 py-2 rounded-[16px] border-[2px] border-[#22223B] hover:scale-105 transition-all duration-200 shadow-[2px_2px_0px_0px_#22223B] font-['Fredoka_One'] text-sm ${
-                    isCopied 
-                      ? 'bg-[#6BCB77] text-white' 
-                      : 'bg-[#FF6B6B] text-white'
+                    isCopied
+                      ? "bg-[#6BCB77] text-white"
+                      : "bg-[#FF6B6B] text-white"
                   }`}
                 >
-                  {isCopied ? '✅ COPIED!' : '📋 COPY ADDRESS'}
+                  {isCopied ? "✅ COPIED!" : "📋 COPY ADDRESS"}
                 </button>
               </div>
             </div>
-
           </div>
         </div>
       </div>

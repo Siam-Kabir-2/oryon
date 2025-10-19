@@ -2,8 +2,8 @@
 
 export default function About() {
   return (
-    <section 
-      id="about" 
+    <section
+      id="about"
       className="py-16 bg-[#F8F9FA] relative overflow-hidden border-t-4 border-black "
       style={{
         backgroundImage: "url(/about.svg)",
@@ -137,8 +137,6 @@ export default function About() {
             </div>
           </div>
         </div>
-
-        
       </div>
     </section>
   );
