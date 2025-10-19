@@ -6,73 +6,75 @@ export default function WhyChoose() {
       icon: "🔋",
       title: "Green by Design",
       desc: "Promoting renewable energy adoption through decentralized technology.",
-      gradient: "from-[#6bcf7f] to-[#00d4aa]",
+      bgColor: "bg-[#6BCB77]",
     },
     {
       icon: "🌐",
       title: "IoT Integrated",
       desc: "Smart device connectivity for efficient energy management.",
-      gradient: "from-[#45b7d1] to-[#4ecdc4]",
+      bgColor: "bg-[#FFD93D]",
     },
     {
       icon: "🔒",
       title: "Secure & Transparent",
       desc: "Built on blockchain for traceability and trust.",
-      gradient: "from-[#00d4aa] to-[#4ecdc4]",
+      bgColor: "bg-[#FF6B6B]",
     },
     {
       icon: "💰",
       title: "Community-Driven",
       desc: "Governance and decision-making powered by ORY holders.",
-      gradient: "from-[#ff8c42] to-[#6bcf7f]",
+      bgColor: "bg-[#6BCB77]",
     },
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-[#00d4aa] via-[#4ecdc4] to-[#45b7d1] relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-radial from-white/10 via-transparent to-transparent"></div>
-
+    <section className="py-16 bg-[#F8F9FA] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-6xl font-bold font-['Righteous'] mb-6 text-white">
-            🌍 Why Choose Oryon
-          </h2>
-          <p className="text-xl lg:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-            Leading the revolution in sustainable blockchain technology
-          </p>
+        <div className="text-center mb-12">
+          <div className="relative inline-block">
+            <div className="relative bg-[#6BCB77] px-8 py-4 rounded-[24px] border-[2px] border-[#22223B] shadow-[4px_4px_12px_rgba(34,34,59,0.15)]">
+              <h2 className="text-5xl md:text-6xl font-['Fredoka_One'] text-white">
+                🌍 Why Choose Oryon?
+              </h2>
+            </div>
+          </div>
+
+          {/* Speech bubble */}
+          <div className="relative inline-block mt-4 max-w-xl mx-auto">
+            <div className="bg-white p-6 rounded-[24px] border-[2px] border-[#22223B] shadow-[4px_4px_12px_rgba(34,34,59,0.15)]">
+              <p className="text-xl md:text-2xl font-['Nunito_Sans'] text-[#22223B] font-semibold">
+                🚀 Leading the revolution in sustainable blockchain technology!
+                💚
+              </p>
+              {/* Triangle pointer */}
+              <div className="absolute -top-[10px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-b-[12px] border-b-[#22223B]" />
+              <div className="absolute -top-[8px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-b-[10px] border-b-white" />
+            </div>
+          </div>
         </div>
 
         {/* Cards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {cards.map((card, index) => (
-            <div
-              key={index}
-              className="bg-white/95 backdrop-blur-sm p-8 rounded-3xl shadow-xl border-2 border-white/30 text-center hover:scale-105 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden"
-            >
-              {/* Gradient top border */}
-              <div
-                className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${card.gradient}`}
-              ></div>
+            <div key={index} className="relative">
+              <div className="relative bg-white border-[2px] border-[#22223B] p-8 rounded-[24px] shadow-[4px_4px_12px_rgba(34,34,59,0.15)] text-center hover:-translate-y-1 transition-all duration-300">
+                {/* Icon */}
+                <div className="text-5xl mb-4">{card.icon}</div>
 
-              <div
-                className="text-5xl mb-6 animate-bounce"
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                {card.icon}
+                {/* Title */}
+                <h3
+                  className={`text-xl font-['Fredoka_One'] text-[#22223B] mb-4 ${card.bgColor} px-3 py-2 rounded-[24px] border-[2px] border-[#22223B]`}
+                >
+                  {card.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-[#22223B] font-['Nunito_Sans'] leading-relaxed">
+                  {card.desc}
+                </p>
               </div>
-
-              <h3 className="text-2xl font-bold text-gray-800 mb-4 font-['Righteous']">
-                {card.title}
-              </h3>
-
-              <p className="text-gray-600 leading-relaxed">{card.desc}</p>
-
-              {/* Hover effect overlay */}
-              <div
-                className={`absolute inset-0 bg-gradient-to-br ${card.gradient} opacity-0 hover:opacity-10 transition-all duration-300 rounded-3xl`}
-              ></div>
             </div>
           ))}
         </div>

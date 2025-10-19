@@ -22,43 +22,42 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white border-b-4 border-black py-3 shadow-[0_8px_0px_0px_#000]"
-          : "bg-white/95 border-b-4 border-black/50 py-4"
+          ? "bg-white border-b-[2px] border-[#22223B] py-3 shadow-[0_4px_12px_rgba(34,34,59,0.15)]"
+          : "bg-transparent py-4"
       }`}
     >
-      {/* Comic book style top stripe */}
-      <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-red-400 via-yellow-400 to-green-400" />
+      {/* Modern gradient stripe - only when scrolled */}
+      {scrolled && (
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#FF6B6B] via-[#FFD93D] to-[#6BCB77]" />
+      )}
 
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between items-center">
-          {/* Comic Logo */}
+          {/* Clean Logo */}
           <div
-            className="flex items-center gap-3 cursor-pointer transition-transform duration-300 hover:scale-110 hover:-rotate-3"
+            className="flex items-center gap-3 cursor-pointer transition-transform duration-300 hover:scale-105"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
-            {/* Logo with comic shadow */}
+            {/* Logo with clean shadow */}
             <div className="relative">
-              <div className="absolute top-1 left-1 w-12 h-12 bg-black rounded-xl"></div>
-              <div className="relative w-12 h-12 bg-gradient-to-br from-green-400 to-blue-400 rounded-xl border-4 border-black flex items-center justify-center text-2xl shadow-lg animate-bounce">
+              <div className="w-12 h-12 bg-[#6BCB77] rounded-[24px] border-[2px] border-[#22223B] flex items-center justify-center text-2xl shadow-[3px_3px_0px_0px_#22223B] hover:shadow-[4px_4px_0px_0px_#22223B] transition-all duration-300">
                 🟩
               </div>
             </div>
-            <span className="text-3xl font-black text-black font-['Righteous'] drop-shadow-lg transform hover:scale-105 transition-all duration-300">
+            <span className="text-3xl font-black text-[#22223B] font-['Fredoka_One'] transform hover:scale-105 transition-all duration-300">
               ORYON
             </span>
           </div>
 
-          {/* Comic Navigation */}
+          {/* Clean Navigation */}
           <nav className={`hidden md:flex ${menuOpen ? "flex" : ""}`}>
-            <ul className="flex gap-6">
+            <ul className="flex gap-4">
               {["About", "Tokenomics", "Roadmap", "Utility", "Community"].map(
                 (item) => (
-                  <li key={item} className="relative">
-                    {/* Shadow element */}
-                    <div className="absolute top-1 left-1 px-4 py-2 bg-black rounded-lg"></div>
+                  <li key={item}>
                     <a
                       href={`#${item.toLowerCase()}`}
-                      className="relative block px-4 py-2 font-bold text-black bg-yellow-300 border-3 border-black rounded-lg transition-all duration-300 hover:bg-yellow-200 hover:-translate-y-1 hover:-translate-x-1 shadow-[3px_3px_0px_0px_#000] transform hover:rotate-1"
+                      className="block px-4 py-2 font-bold text-[#22223B] bg-white border-[2px] border-[#22223B] rounded-[24px] transition-all duration-300 hover:bg-[#FFD93D] hover:scale-105 shadow-[2px_2px_0px_0px_#22223B] hover:shadow-[3px_3px_0px_0px_#22223B] font-['Fredoka_One']"
                     >
                       {item}
                     </a>
@@ -68,26 +67,21 @@ export default function Header() {
             </ul>
           </nav>
 
-          {/* Comic CTA Button */}
+          {/* Clean CTA Button */}
           <div className="hidden md:flex">
-            <div className="relative">
-              {/* Button shadow */}
-              <div className="absolute top-2 left-2 px-6 py-3 bg-black rounded-lg"></div>
-              <a
-                href="#presale"
-                className="relative block px-6 py-3 bg-gradient-to-r from-red-400 to-pink-400 text-black font-black border-4 border-black rounded-lg transition-all duration-300 hover:-translate-y-2 hover:-translate-x-2 shadow-[4px_4px_0px_0px_#000] transform hover:rotate-2 animate-pulse"
-              >
-                🚀 JOIN PRESALE!
-              </a>
-            </div>
+            <a
+              href="#presale"
+              className="px-6 py-3 bg-[#FF6B6B] text-white font-black border-[2px] border-[#22223B] rounded-[24px] transition-all duration-300 hover:scale-105 shadow-[3px_3px_0px_0px_#22223B] hover:shadow-[4px_4px_0px_0px_#22223B] font-['Fredoka_One']"
+            >
+              🚀 JOIN PRESALE!
+            </a>
           </div>
 
-          {/* Comic Mobile Menu Button */}
-          <div className="md:hidden relative">
-            <div className="absolute top-1 left-1 w-12 h-12 bg-black rounded-lg"></div>
+          {/* Clean Mobile Menu Button */}
+          <div className="md:hidden">
             <button
-              className={`relative w-12 h-12 bg-yellow-300 border-4 border-black rounded-lg text-black text-xl transition-all duration-300 hover:bg-yellow-200 hover:-translate-y-1 hover:-translate-x-1 shadow-[3px_3px_0px_0px_#000] transform hover:rotate-12 ${
-                menuOpen ? "rotate-45" : ""
+              className={`w-12 h-12 bg-[#FFD93D] border-[2px] border-[#22223B] rounded-[24px] text-[#22223B] text-xl transition-all duration-300 hover:scale-105 shadow-[2px_2px_0px_0px_#22223B] hover:shadow-[3px_3px_0px_0px_#22223B] font-['Fredoka_One'] ${
+                menuOpen ? "rotate-90" : ""
               }`}
               aria-label="Toggle navigation menu"
               aria-expanded={menuOpen}
@@ -98,17 +92,16 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Comic Mobile Navigation */}
+        {/* Clean Mobile Navigation */}
         {menuOpen && (
-          <nav className="md:hidden mt-4 p-6 bg-white border-4 border-black rounded-2xl shadow-[8px_8px_0px_0px_#000] animate-in slide-in-from-top duration-300 transform -rotate-1">
-            <ul className="flex flex-col gap-4">
+          <nav className="md:hidden mt-4 p-6 bg-white border-[2px] border-[#22223B] rounded-[24px] shadow-[4px_4px_12px_rgba(34,34,59,0.15)] animate-in slide-in-from-top duration-300">
+            <ul className="flex flex-col gap-3">
               {["About", "Tokenomics", "Roadmap", "Utility", "Community"].map(
                 (item, index) => (
-                  <li key={item} className="relative">
-                    <div className="absolute top-1 left-1 w-full h-full bg-black rounded-lg"></div>
+                  <li key={item}>
                     <a
                       href={`#${item.toLowerCase()}`}
-                      className="relative block px-4 py-3 font-bold text-black bg-gradient-to-r from-blue-300 to-purple-300 border-3 border-black rounded-lg transition-all duration-300 hover:bg-yellow-300 hover:-translate-y-1 hover:-translate-x-1 shadow-[3px_3px_0px_0px_#000] transform hover:rotate-1"
+                      className="block px-4 py-3 font-bold text-[#22223B] bg-[#F8F9FA] border-[2px] border-[#22223B] rounded-[24px] transition-all duration-300 hover:bg-[#FFD93D] hover:scale-102 shadow-[2px_2px_0px_0px_#22223B] font-['Fredoka_One']"
                       onClick={() => setMenuOpen(false)}
                     >
                       {item}
@@ -116,11 +109,10 @@ export default function Header() {
                   </li>
                 )
               )}
-              <li className="pt-3 relative">
-                <div className="absolute top-4 left-1 w-full h-12 bg-black rounded-lg"></div>
+              <li className="pt-3">
                 <a
                   href="#presale"
-                  className="relative block text-center px-4 py-3 bg-gradient-to-r from-red-400 to-pink-400 border-4 border-black text-black font-black rounded-lg shadow-[4px_4px_0px_0px_#000] transition-all duration-300 hover:-translate-y-2 hover:-translate-x-2 transform hover:rotate-2 animate-pulse"
+                  className="block text-center px-4 py-3 bg-[#FF6B6B] border-[2px] border-[#22223B] text-white font-black rounded-[24px] shadow-[3px_3px_0px_0px_#22223B] transition-all duration-300 hover:scale-105 font-['Fredoka_One']"
                   onClick={() => setMenuOpen(false)}
                 >
                   🚀 JOIN PRESALE!
