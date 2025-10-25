@@ -391,18 +391,34 @@ export default function Tokenomics() {
                   const labelRadiusTablet = 157.5;
                   const labelRadiusDesktop = 180;
 
-                  // Mobile positions
-                  const xMobile = 150 + Math.cos(angle) * labelRadiusMobile;
-                  const yMobile = 150 + Math.sin(angle) * labelRadiusMobile;
+                  // Mobile positions - rounded to 2 decimal places to prevent hydration mismatch
+                  const xMobile =
+                    Math.round(
+                      (150 + Math.cos(angle) * labelRadiusMobile) * 100
+                    ) / 100;
+                  const yMobile =
+                    Math.round(
+                      (150 + Math.sin(angle) * labelRadiusMobile) * 100
+                    ) / 100;
 
-                  // Tablet positions
-                  const xTablet = 175 + Math.cos(angle) * labelRadiusTablet;
-                  const yTablet = 175 + Math.sin(angle) * labelRadiusTablet;
+                  // Tablet positions - rounded to 2 decimal places to prevent hydration mismatch
+                  const xTablet =
+                    Math.round(
+                      (175 + Math.cos(angle) * labelRadiusTablet) * 100
+                    ) / 100;
+                  const yTablet =
+                    Math.round(
+                      (175 + Math.sin(angle) * labelRadiusTablet) * 100
+                    ) / 100;
 
-                  // Desktop positions
-                  const xDesktop = 200 + Math.cos(angle) * labelRadiusDesktop;
-                  const yDesktop = 200 + Math.sin(angle) * labelRadiusDesktop;
-
+                  const xDesktop =
+                    Math.round(
+                      (200 + Math.cos(angle) * labelRadiusDesktop) * 100
+                    ) / 100;
+                  const yDesktop =
+                    Math.round(
+                      (200 + Math.sin(angle) * labelRadiusDesktop) * 100
+                    ) / 100;
                   return (
                     <div key={`label-container-${index}`}>
                       {/* Mobile label */}
